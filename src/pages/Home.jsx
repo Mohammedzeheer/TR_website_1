@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <div>
       <BackToTop />
-      <ChatBox />
+      {/* <ChatBox /> */}
       <Suspense fallback={<div className='h-screen'> <Loader /></div>}>
         <LazyHeroOne />
         <LazyExplore
@@ -76,7 +76,6 @@ const Home = () => {
           </div>
         </div>
         <LazyDontLet />
-
       </Suspense>
     </div>
   );
