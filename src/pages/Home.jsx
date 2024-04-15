@@ -1,10 +1,10 @@
 import React, { Suspense } from 'react';
 import { usersResponse } from '../constants/userResponse'
+import  Fade from "react-reveal/Fade";
 import BackToTop from '../components/BackToTop';
 import ChatApp from '../components/Chat/ChatApp';
-// import CarouselControlsOutside from '../components/Carousal';
-import  Fade from "react-reveal/Fade";
 import Loader from '../components/Loader';
+import ChatBox from '../components/Chat/ChatBox';
 const LazyHeroOne = React.lazy(() => import('../components/HeroSection/SectionOne'));
 const LazyProjectCarousel = React.lazy(() => import('../components/HeroSection/ProjectCarousel'));
 const LazyHomeSection1 = React.lazy(() => import('../components/Home/HomeSection1'));
@@ -21,7 +21,13 @@ const Home = () => {
     <div>
 
       <BackToTop />
-      {/* <ChatApp /> */}
+      <ChatBox />
+      {/* <iframe
+  src="https://app.chatgptbuilder.io/webchat/?p=1053993&ref=1701704215780"
+  width="400"
+  height="600"
+  title="ChatGPT Builder Chatbot"
+></iframe> */}
       <Suspense fallback={<div className='h-screen'> <Loader /></div>}>
         <LazyHeroOne />
         <LazyExplore
