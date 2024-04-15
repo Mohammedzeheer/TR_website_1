@@ -1,35 +1,31 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Explore from '../HeroSection/Explore';
-import  Fade from "react-reveal/Fade";
+import Fade from "react-reveal/Fade";
 
 const Card = ({ logoSrc, ImageSrc, description }) => {
     return (
         <>
-       <Fade top distance='5%' duration={1000}>
-            <div className="flex flex-col lg:flex-row lg:justify-center lg:items-center mx-[26px] sm:mx-[93px] my-5">
-                {/* Right side image */}
-                <div className="m-2 md:order-last hover:scale-95 transition duration-500">
-                    <img src={ImageSrc} alt="placeholder" className="w-72 h-72 md:w-[300px] md:h-[300px] object-cover" />
+            <Fade top distance='5%' duration={1000}>
+                <div className="flex flex-col lg:flex-row lg:justify-center lg:items-center mx-[26px] sm:mx-[93px] my-5">
+                    {/* Right side image */}
+                    <div className="m-2 md:order-last hover:scale-95 transition duration-500">
+                        <img src={ImageSrc} alt="placeholder" className="w-72 h-72 md:w-[300px] md:h-[300px] object-cover" />
+                    </div>
+                    {/* Left side symbol */}
+                    <div className="flex justify-start sm:items-center my-4 md:mb-0 md:mr-4 md:order-first sm:hover:scale-110 transition duration-500">
+                        <img src={logoSrc} className='w-[142px] h-auto' />
+                    </div>
+                    {/* Center text paragraph */}
+                    <div className="text-left m-2 mb-4 md:mb-0 lg:mx-8 md:max-w-[400px] lg:max-w-[550px]">
+                        <p className="text-black-1000 md:text-lg font-montserrat tracking-wide">{description}</p>
+                    </div>
                 </div>
-
-                {/* Left side symbol */}
-                <div className="flex justify-start sm:items-center my-4 md:mb-0 md:mr-4 md:order-first sm:hover:scale-110 transition duration-500">
-                    <img src={logoSrc} className='w-[142px] h-auto' />
-                </div>
-
-                {/* Center text paragraph */}
-                <div className="text-left m-2 mb-4 md:mb-0 lg:mx-8 md:max-w-[400px] lg:max-w-[550px]">
-                    <p className="text-black-1000 md:text-lg font-montserrat tracking-wide">{description}</p>
-                </div>
-            </div>
-        </Fade>
-
+            </Fade>
         </>
     );
 };
 
 const CardList = () => {
-  
 
     const cardData = [
         {
@@ -66,9 +62,6 @@ const CardList = () => {
     ];
 
     return (
-        // <div className={`w-full transition-opacity duration-1000 ease-in-out ${
-        //     isImageLoaded ? 'opacity-100' : 'opacity-0'
-        //   }`}>
         <div>
             <Explore
                 backgroundColor=""

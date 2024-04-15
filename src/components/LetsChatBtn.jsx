@@ -1,5 +1,4 @@
 import React from 'react'
-
 import img_ellipse1 from '../assets/images/img_ellipse1.png'
 import img_ellipse2 from '../assets/images/img_ellipse2.png'
 import img_ellipse3 from '../assets/images/img_ellipse3.png'
@@ -35,6 +34,5 @@ const LetsChatBtn = () => {
     </>
   );
 };
-
 
 export default LetsChatBtn

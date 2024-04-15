@@ -13,7 +13,6 @@ function WeTransform() {
             <div className="absolute inset-0 bg-white-A700"></div>
             <div
                 className="absolute inset-0 bg-cover bg-center opacity-20"
-                // style={{ backgroundImage: "url('images/background.webp')" }}
                 style={{ backgroundImage: `url(${backgroundImage})` }}
             ></div>
 
@@ -45,21 +44,9 @@ function WeTransform() {
                             className="w-[150px] h-[28px] sm:w-[244px] sm:h-[45px] px-3"
                         />
                     </div>
-
-                    {/* <FadeIn id="fade-in-element">
-  <div className="flex justify-center px-4 sm:px-6 lg:px-8">
-                    <img
-                       
-                        src={ThreeCards}
-                        alt="Responsive Image"
-                        className="max-w-full mt-10 md:mt-24"
-                    />
-                </div>
-</FadeIn> */}
                     <Fade top distance='5%' duration={1000}>
                         <div className="flex justify-center px-4 sm:px-6 lg:px-8">
                             <img
-                                // src="/images/ThreeCards.svg"
                                 src={ThreeCards}
                                 alt="Responsive Image"
                                 className="max-w-full mt-10 md:mt-24"
@@ -69,7 +56,6 @@ function WeTransform() {
 
                 <Fade top distance='5%' duration={1000}>
                     <img
-                        // src="/images/GraphGroup.png"
                         src={GraphGroup}
                         alt="Responsive Image"
                         className="max-w-full md:mt-[-50px]"
@@ -82,5 +68,3 @@ function WeTransform() {
 }
 
 export default WeTransform
-
-

@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
-import  Fade from "react-reveal/Fade";
-// import { Fade } from "react-awesome-reveal";
+import Fade from "react-reveal/Fade";
 import DepSectionCard from "../DepSectionCard";
 import dep_card_img_1 from "../../assets/images/dep_card_img_1.webp";
 import dep_card_img_2 from "../../assets/images/dep_card_img_2.webp";
@@ -14,9 +13,7 @@ import { dep1Btn, dep2Btn, dep3Btn, dep4Btn, dep5Btn, dep6Btn, dep7Btn } from ".
 const btBg1 = 'bg-gray-900_04 text-white-A700'
 const btBg2 = 'bg-gray-800_03 text-white-A700'
 
-
 const HomeSection2 = () => {
-
     const serviecesRef = useRef(null)
     return (
         <>
@@ -26,16 +23,16 @@ const HomeSection2 = () => {
                 >
                     <div className="flex flex-col items-start justify-end px-4 sm:px-8 w-full pb-24">
                         <div className="flex flex-col font-montserrat items-start justify-start mb-1 mt-[30px] mx-auto w-full">
-                        <Fade top distance='5%' duration={1000}>
-                            <div className='pt-10 md:pt-20'>
-                                <div className={`fontExo text-left font-extrabold text-4xl md:text-[64px] md:leading-[89.6px] tracking-[-1%] bg-gradient-to-r from-white-A700 to-blue-600 bg-clip-text text-transparent text-gray-900`}>
-                                    So How We Can Help?
-                                </div>
-                                <div className={`fontMontserrat text-left text-xs md:text-[24px] font-normal leading-5 md:leading-[38.4px] tracking-wide mt-4 sm:mt-4  text-gray-500`}>
-                                    It&#39;s not about limitations, but it&#39;s something
-                                    we focus on.
-                                </div>
-                            </div> </Fade>
+                            <Fade top distance='5%' duration={1000}>
+                                <div className='pt-10 md:pt-20'>
+                                    <div className={`fontExo text-left font-extrabold text-4xl md:text-[64px] md:leading-[89.6px] tracking-[-1%] bg-gradient-to-r from-white-A700 to-blue-600 bg-clip-text text-transparent text-gray-900`}>
+                                        So How We Can Help?
+                                    </div>
+                                    <div className={`fontMontserrat text-left text-xs md:text-[24px] font-normal leading-5 md:leading-[38.4px] tracking-wide mt-4 sm:mt-4  text-gray-500`}>
+                                        It&#39;s not about limitations, but it&#39;s something
+                                        we focus on.
+                                    </div>
+                                </div> </Fade>
 
 
                             <div className="relative" id="services">

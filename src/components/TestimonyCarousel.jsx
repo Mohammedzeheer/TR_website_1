@@ -16,7 +16,6 @@ const TestimonyCarousel = ({ users }) => {
   };
 
   return (
-    
      <Slider {...settings}>
       {users.map((user, index) => (
         <div key={index} className='py-16 px-4 max-w-[1300px] mx-auto'>
@@ -26,7 +25,6 @@ const TestimonyCarousel = ({ users }) => {
                   &quot;{user.comment}&quot;
                 </p>
                 <div className="flex flex-col gap-4 items-center justify-start w-auto">
-                  {/* <img className="h-12 md:h-auto rounded-[50%] w-12" src={user.image} alt="ellipseTwentyEight" /> */}
                   <div className="flex flex-col gap-3 items-center justify-start w-auto">
                     <p className="text-gray-900_87 text-lg tracking-[-0.54px] w-auto font-medium font-montserrat">{user.name}</p>
                     <p className="text-gray-900 text-lg w-auto font-montserrat font-semibold">{user.desg}</p>

@@ -1,137 +1,75 @@
-// import React, { useState } from 'react';
-// import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import { BsChatQuote } from "react-icons/bs";
 
-// const Chatbox = () => {
-//     const [userInput, setUserInput] = useState('');
-//     const [chatMessages, setChatMessages] = useState([]);
+function ChatBox() {
+    const [messages, setMessages] = useState([]);
+    const [openChat, setOpenChat] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
+    const [showButton, setShowButton] = useState(false);
 
-//     const handleUserInput = (event) => {
-//         setUserInput(event.target.value);
-//     };
-
-//     const handleSendMessage = async () => {
-//         if (userInput.trim() !== '') {
-//             addUserMessage(userInput);
-//             try {
-//                 const response = await axios.post(
-//                     'https://api.openai.com/v1/engines/davinci-codex/completions',
-//                     {
-//                         prompt: userInput,
-//                         max_tokens: 150,
-//                     },
-//                     {
-//                         headers: {
-//                             'Content-Type': 'application/json',
-//                             Authorization: 'Bearer YOUR_OPENAI_API_KEY',
-//                         },
-//                     }
-//                 );
-//                 addBotMessage(response.data.choices[0].text.trim());
-//             } catch (error) {
-//                 console.error('Error fetching response from OpenAI:', error);
-//             }
-//             setUserInput('');
-//         }
-//     };
-
-//     const handleKeyPress = (event) => {
-//         if (event.key === 'Enter') {
-//             handleSendMessage();
-//         }
-//     };
-
-//     const addUserMessage = (message) => {
-//         setChatMessages([...chatMessages, { text: message, isUser: true }]);
-//     };
-
-//     const addBotMessage = (message) => {
-//         setChatMessages([...chatMessages, { text: message, isUser: false }]);
-//     };
-
-//     return (
-//         <div>
-//             {/* Render chat messages */}
-//             <div>
-//                 {chatMessages.map((message, index) => (
-//                     <div key={index} className={message.isUser ? 'user-message' : 'bot-message'}>
-//                         {message.text}
-//                     </div>
-//                 ))}
-//             </div>
-//             {/* Input field and send button */}
-//             <div>
-//                 <input type="text" value={userInput} onChange={handleUserInput} onKeyPress={handleKeyPress} />
-//                 <button onClick={handleSendMessage}>Send</button>
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default Chatbox;
-
-import React, { useState } from 'react';
-
-const Chatbox = () => {
-    const [isChatboxOpen, setIsChatboxOpen] = useState(true);
-    const [userInput, setUserInput] = useState('');
-    const [chatMessages, setChatMessages] = useState([]);
-
-    const toggleChatbox = () => {
-        setIsChatboxOpen(!isChatboxOpen);
-    };
-
-    const handleUserInput = (event) => {
-        setUserInput(event.target.value);
-    };
-
-    const handleSendMessage = () => {
-        if (userInput.trim() !== '') {
-            addUserMessage(userInput);
-            respondToUser(userInput);
-            setUserInput('');
+    // Function to handle scrolling and toggle visibility of chat button
+    const handleScroll = () => {
+        if (window.pageYOffset > 300) {
+            setIsVisible(true);
+        } else {
+            setIsVisible(false);
         }
     };
 
-    const handleKeyPress = (event) => {
-        if (event.key === 'Enter') {
-            handleSendMessage();
+    // Add scroll event listener when component mounts
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    // Set showButton to true after 3 seconds
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowButton(true);
+        }, 3000);
+
+        return () => clearTimeout(timer);
+    }, []);
+
+    useEffect(() => {
+        if (openChat && messages.length === 0) {
+            setMessages([
+                { text: 'Welcome to Techrender! How can I assist you?', sender: 'bot' }
+            ]);
         }
-    };
-
-    const addUserMessage = (message) => {
-        setChatMessages([...chatMessages, { text: message, isUser: true }]);
-    };
-
-    const addBotMessage = (message) => {
-        setChatMessages([...chatMessages, { text: message, isUser: false }]);
-    };
-
-    const respondToUser = (userMessage) => {
-        // Replace this with your chatbot logic
-        setTimeout(() => {
-            addBotMessage('This is a response from the chatbot.');
-        }, 500);
-    };
+    }, [openChat]);
 
     return (
-        <div>
-            {isChatboxOpen && (
-                <div className="fixed bottom-16 right-4 w-96">
-                    {/* Chatbox HTML structure */}
-                </div>
+        <div className={`fixed mb-4 mr-4 ${isVisible ? 'bottom-14 right-2' : 'bottom-2 right-2'}`} style={{ zIndex: 9999, transition: 'bottom 0.3s, right 0.3s' }}>
+            {showButton && (
+                <button
+                    className="bg-gray-200 rounded-full text-gray-900 py-2 px-2  hover:bg-deep_purple-800 hover:text-white-A700 transition duration-300"
+                    onClick={() => setOpenChat(!openChat)}
+                >
+                    <BsChatQuote style={{ fontSize: "2rem" }} />
+                </button>
             )}
-            <button
-                id="open-chat"
-                className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300 flex items-center"
-                onClick={toggleChatbox}
-            >
-                {/* Button content */}
-            </button>
+            <div className={`fixed bottom-16 right-4 ml-2 w-auto sm:w-96 ${openChat ? 'transition duration-500 ' : 'hidden'}`}>
+                <div className="py-1 bg-white-A700 shadow-xl rounded-lg max-w-lg w-full relative">
+                    <iframe className='h-96 w-auto sm:w-96 relative'
+                        src="https://app.chatgptbuilder.io/webchat/?p=1053993&ref=1701704215780"
+                    >
+                    </iframe>
+                    <button
+                        className="absolute right-4 top-6 text-gray-300 hover:text-gray-400 focus:outline-none focus:text-gray-400"
+                        onClick={() => setOpenChat(false)}
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+
+                </div>
+            </div>
         </div>
     );
-};
+}
 
-export default Chatbox;
-
-
-
+export default ChatBox;

@@ -15,12 +15,10 @@ import logo_1_wonderla from "../assets/images/logo_1_wonderla.png";
 import wonderla_img from "../assets/images/wonderla_img.png";
 import logo_1_akessia from "../assets/images/logo_1_akessia.png";
 import akesia_img from "../assets/images/akesia_img.png";
-
 import RecentPrjCard from "./RecentPrjCard";
 
 const RecentProject = () => {
     return (
-        //screens: { md: { max: "1050px" }, sm: { max: "550px" } },
         <>
             <div className="bg-white-A700 flex flex-col font-montserrat items-center justify-end mx-auto py-[3px] w-full md:px-0 px-48">
                 <div className="flex flex-col items-end mt-2 md:pl-10  sm:pl-5 w-full">
@@ -39,7 +37,6 @@ const RecentProject = () => {
                 <div className="flex flex-col gap-8 items-start justify-start md:ml-[0] ml-[37px] mt-16 w-auto md:w-full md:px14">
                     <div className="flex flex-col gap-8 items-start justify-start w-full md:w-full md:px14">
                         {/* card section */}
-
                         <RecentPrjCard
                             txt="NexCRM is a comprehensive SaaS application that
                                  streamlines client relationship and project management.

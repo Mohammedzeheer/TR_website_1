@@ -3,8 +3,6 @@ import { BsChatQuote } from "react-icons/bs";
 import { AiOutlineSend } from "react-icons/ai";
 import TechrenderLogo from '../../assets/images/TR_logo.webp'
 import openai from 'openai'; 
-// import { config } from 'dotenv'
-// config()
 import axios from 'axios'
 
 function ChatApp() {

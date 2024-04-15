@@ -15,6 +15,3 @@ function SuccessFull() {
 }
 
 export default SuccessFull
-
-
-

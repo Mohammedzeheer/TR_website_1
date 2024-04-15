@@ -9,7 +9,7 @@ const snapTrackCard = (props) => {
       <div className={props.className}>
         {/* bg-gradient2 */}
         <div className="absolute bg-indigo-900 border border-indigo-900 border-solid bottom-[0] flex flex-col inset-x-[0] items-center justify-end mx-auto p-[7px] rounded-[24px] shadow-bs2 w-96">
-           
+
           <div className="flex flex-col md:gap-10 gap-[66px] items-center justify-start mt-[69px] w-[84%] md:w-full">
             <div className="flex flex-col gap-1 items-start justify-start w-auto">
               <p
@@ -24,7 +24,7 @@ const snapTrackCard = (props) => {
               </p>
             </div>
             <div className="flex flex-row items-start justify-between w-3/4 md:w-full">
-                
+
               <img
                 className="h-[194px] md:h-auto mt-6 object-cover rounded-[10px]"
                 src={img2}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
 const ProjectDetailsSection = ({ head1, head2, img, align, color, text }) => {
     return (
@@ -8,8 +8,6 @@ const ProjectDetailsSection = ({ head1, head2, img, align, color, text }) => {
                     <div className={`${align} flex flex-col md:gap-10 gap-[137px]  w-auto md:w-full`}>
                         <div className={`${align}  flex flex-col md:gap-10 gap-16 w-auto md:w-full`}>
                             <div className="flex flex-col gap-6 w-auto sm:w-full">
-
-
                                 <p
                                     className={`${color} sm:leading-[120.00%] sm:text-6xl text-4xl tracking-[-0.64px] font-exo font-extrabold text-start`}>
                                     <span className={`${color} font-exo font-extrabold`}>
@@ -38,15 +36,8 @@ const ProjectDetailsSection = ({ head1, head2, img, align, color, text }) => {
                     </div>
                 </div>
             </div>
-        </> 
+        </>
     )
 }
 
 export default ProjectDetailsSection
-
-
-
-{/* <div className="flex flex-col gap-[54px] items-start justify-start md:w-full mt-28 md:mt-14 w-full">
-                <div className={` ${align} flex flex-col md:gap-10 gap-[137px] justify-start w-auto md:w-full`}>
-                    <div className= {`${align}  flex flex-col md:gap-10 gap-16 justify-start w-auto md:w-full`}>
-                        <div className="flex flex-col gap-6 items-start justify-start w-auto sm:w-full"> */}

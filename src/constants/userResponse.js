@@ -24,10 +24,6 @@ export const usersResponse = [
         show: false
     },
     {
-        // comment: ` Entering our third year with MT5, 
-        //           their swift claim handling and tailored service have greatly
-        //            boosted our employee relations and streamlined HR operations, 
-        //            becoming essential in our employee care approach. Big thanks to the team! `,
         comment: ` Choosing Techrender.ai was one of the best decisions for our business. Their collaborative approach, coupled with deep technical expertise, resulted in a top-notch software solution that has significantly enhanced our workflow. Trustworthy, reliable, and highly skilled – a winning combination! `,
         name: "Suresh Babu",
         desg: "Director, Source break",
