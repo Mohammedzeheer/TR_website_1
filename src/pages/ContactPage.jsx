@@ -76,7 +76,7 @@ const ContactPage = () => {
                                                 <input
                                                     className="p-0 placeholder:text-black-900_87 text-left text-xl tracking-[-0.20px] w-full border-0 bg-transparent"
                                                     name="email_One"
-                                                    placeholder="abcd@company.com"
+                                                    placeholder="Enter email"
                                                     type="email"
                                                     value={mail}
                                                     onChange={(e) => setMail(e.target.value)}
@@ -91,7 +91,7 @@ const ContactPage = () => {
                                                 <input
                                                     className="p-0 placeholder:text-black-900_87 text-left text-xl tracking-[-0.20px] w-full border-0 bg-transparent"
                                                     name="label"
-                                                    placeholder="87 ** 87**90"
+                                                    placeholder="Enter phone number"
                                                     type="text"
                                                     value={mobile}
                                                     onChange={(e) => setMobile(e.target.value)}
@@ -108,7 +108,7 @@ const ContactPage = () => {
                                             Project Description
                                         </p>
                                         <textarea className="text-xl bg-white-A700 border border-gray-900_33 flex flex-col items-center justify-center p-4 rounded-[10px] shadow-bs2 w-full md:w-full "
-                                            placeholder="Our mission is to create the most compelling c textile manufacing company of the 21st centuery by driving the world’s trastion to comfort fashion..."
+                                            placeholder="Write here "
                                             value={description}
                                             onChange={(e) => setDescription(e.target.value)}
                                         />
